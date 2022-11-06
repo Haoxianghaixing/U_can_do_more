@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>register</title>
+<script src="vue.js"></script>
+<!-- <link rel="stylesheet" href="register.css"> -->
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+div {
+    overflow: hidden;
+}
+/* 主盒子 */
+#main{
+    position: relative;
+    width: 1320px;
+    height: 800px;
+    left:50%;
+    margin-left: -660px;
+}
+/* 头部区域 */
+.header {
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    background-color: #3875ba;
+    text-align: center;
+    line-height: 120px;
+    color: white;
+    font-family: '微软雅黑';
+    font-size: 40px;
+    /* z-index: 0; */
+}
+
+/* 大背景 */
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(bg.png) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* z-index: 0; */
+}
+/* 人员信息 :盒子从大到小，从上到下*/
+
+.info {
+    position: absolute;
+    /* z-index: 1; */
+    width: 600px;
+    height: 400px;
+    left: 50%;
+    margin-left: -300px;
+    top:50%;
+    margin-top: -200px;
+    background-color: white;
+    box-shadow: 30px 30px 5px 5px rgba(0,0,0,.1);
+    text-align: center;
+    border-radius: 50px;
+}
+
+.info span {
+    font-size: 30px;
+ }
+
+.info form {
+    margin-top: 10px;
+}
+
+form > div {
+    margin-top: 30px;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+.submit_btn {
+    width: 250px;
+    height: 70px;
+    background-color: #3875ba;
+    text-align: center;
+    color: white;
+}
+</style>
+</head>
+<body>
+    
+<div id="main">
+
+    <!-- 大背景 -->
+    <div class="bg">
+        <!-- 上方标题 -->
+        <div class="header">
+            <h3>你能做的，岂止如此</h3>
+        </div>
+    </div>
+     <!-- 人员信息 -->
+     <div class="info">
+        <span>欢迎使用呢！</span>
+        <form action="">
+            <div class="stu_id">
+                <label for="id">人员学号</label><br>
+                <input type="text" id="id" v-model="stu_id">
+            </div>
+            <div class="pwd">
+                <label for="password">输入密码</label><br>
+                <input type="password"  id="password" v-model="pwd">
+            </div>
+            <div class="sbm">
+                <input type="submit" class="submit_btn" id="btn1" value="登录">
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+<script>
+
+new Vue({
+    el:'#main',
+    data:{
+        stu_id:'',
+        pwd:''
+    }
+  
+})
+</script>
+</body>
+</html>
